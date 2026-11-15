@@ -1,3 +1,4 @@
+# AI disclosure: written with AI assistance (Claude) for Team Dahna, NASA Space Apps 2026.
 """Real elevation for each Mars / Moon twin, so the twin can be shown in 3D.
 
 Mars: MGS MOLA MEGDR 128 px/deg (~463 m), PDS Geosciences Node.

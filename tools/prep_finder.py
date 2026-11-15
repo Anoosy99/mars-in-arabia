@@ -1,3 +1,4 @@
+# AI disclosure: written with AI assistance (Claude) for Team Dahna, NASA Space Apps 2026.
 """Analog Finder: scan the Arabian Peninsula on a 0.1-degree grid and score every cell
 for three planetary analog archetypes, using only open data.
 

@@ -1,3 +1,4 @@
+// AI disclosure: written with AI assistance (Claude) for Team Dahna, NASA Space Apps 2026.
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 

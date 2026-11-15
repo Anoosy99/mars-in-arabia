@@ -48,5 +48,10 @@ To rebuild the data, run these scripts with Python 3 (numpy, Pillow, pyshp):
 - `tools/prep_finder.py`
 - `tools/prep_measure.py`
 
-## Tools and AI disclosure
-The site uses three.js, GSAP, Lenis and Leaflet. AI tools (Claude) assisted with code. Site selection, assessment and the final judgement are by the team.
+## Tools and credits
+three.js, GSAP + ScrollTrigger, Lenis, Leaflet; Esri World Imagery basemap (finder); Google Fonts (Geist, Noto Kufi Arabic); Python with numpy, Pillow and pyshp; Macrostrat API.
+
+## AI disclosure
+- **Code and data scripts:** written with AI assistance (Claude). This is marked in the `ai-disclosure` meta tag of `index.html`.
+- **Demo video voice-over:** generated with AI (ElevenLabs). The video carries a visible label and file metadata saying so.
+- **No AI-generated images.** All imagery and elevation are real data from the sources above.

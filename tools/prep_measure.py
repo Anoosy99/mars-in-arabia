@@ -1,3 +1,4 @@
+# AI disclosure: written with AI assistance (Claude) for Team Dahna, NASA Space Apps 2026.
 """Turn the score into measurements.
 
   terrain  : SRTM (Earth) vs MOLA / LOLA (twin), compared at the SAME pixel size over the SAME width

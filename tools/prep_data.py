@@ -1,3 +1,4 @@
+# AI disclosure: written with AI assistance (Claude) for Team Dahna, NASA Space Apps 2026.
 """Download and pre-process the real data the site uses.
 
 Earth terrain : AWS Terrain Tiles (terrarium, SRTM-based elevation)
