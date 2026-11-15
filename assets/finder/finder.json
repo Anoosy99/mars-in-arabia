@@ -1,0 +1,197 @@
+{
+ "generated": "2026-11-14",
+ "bbox": [
+  16.0,
+  34.5,
+  32.5,
+  56.5
+ ],
+ "cell": 0.1,
+ "cells": 36300,
+ "landCells": 27748,
+ "validation": [
+  {
+   "id": "khaybar",
+   "name": "Harrat Khaybar",
+   "kind": "volcanic",
+   "score": 100,
+   "percentile": 99.9
+  },
+  {
+   "id": "jirsan",
+   "name": "Umm Jirsan lava tube",
+   "kind": "volcanic",
+   "score": 100,
+   "percentile": 99.9
+  },
+  {
+   "id": "rahat",
+   "name": "Harrat Rahat, 1256 CE flow",
+   "kind": "volcanic",
+   "score": 81,
+   "percentile": 99.4
+  },
+  {
+   "id": "rub",
+   "name": "Rub' al Khali dune sea",
+   "kind": "plains",
+   "score": 79,
+   "percentile": 85.2
+  },
+  {
+   "id": "wahbah",
+   "name": "Al Wahbah crater",
+   "kind": "volcanic",
+   "score": 98,
+   "percentile": 99.9
+  },
+  {
+   "id": "wabar",
+   "name": "Wabar impact craters",
+   "kind": "plains",
+   "score": 72,
+   "percentile": 73.2
+  }
+ ],
+ "candidates": [
+  {
+   "kind": "volcanic",
+   "lat": 27.55,
+   "lng": 37.25,
+   "score": 100,
+   "label": "near Harrat Uwayrid",
+   "elev": 1288,
+   "slope": 1.0,
+   "rain": 18,
+   "tmax": 43.5
+  },
+  {
+   "kind": "volcanic",
+   "lat": 26.35,
+   "lng": 40.15,
+   "score": 100,
+   "label": "near Harrat Ithnayn",
+   "elev": 1312,
+   "slope": 0.7,
+   "rain": 29,
+   "tmax": 43.9
+  },
+  {
+   "kind": "volcanic",
+   "lat": 26.15,
+   "lng": 37.75,
+   "score": 100,
+   "label": "near Harrat Hammah",
+   "elev": 1116,
+   "slope": 3.4,
+   "rain": 15,
+   "tmax": 49.2
+  },
+  {
+   "kind": "volcanic",
+   "lat": 25.25,
+   "lng": 37.75,
+   "score": 100,
+   "label": "near Harrat Lunayyir",
+   "elev": 895,
+   "slope": 2.1,
+   "rain": 18,
+   "tmax": 47.1
+  },
+  {
+   "kind": "plains",
+   "lat": 28.25,
+   "lng": 34.85,
+   "score": 100,
+   "label": "unnamed area",
+   "elev": 109,
+   "slope": 1.0,
+   "rain": 15,
+   "tmax": 44.3
+  },
+  {
+   "kind": "plains",
+   "lat": 22.55,
+   "lng": 44.85,
+   "score": 100,
+   "label": "unnamed area",
+   "elev": 911,
+   "slope": 0.8,
+   "rain": 15,
+   "tmax": 46.1
+  },
+  {
+   "kind": "plains",
+   "lat": 22.25,
+   "lng": 46.05,
+   "score": 100,
+   "label": "unnamed area",
+   "elev": 917,
+   "slope": 1.2,
+   "rain": 11,
+   "tmax": 47.2
+  },
+  {
+   "kind": "plains",
+   "lat": 21.35,
+   "lng": 44.05,
+   "score": 100,
+   "label": "unnamed area",
+   "elev": 946,
+   "slope": 0.8,
+   "rain": 15,
+   "tmax": 45.1
+  },
+  {
+   "kind": "rugged",
+   "lat": 28.75,
+   "lng": 34.85,
+   "score": 100,
+   "label": "unnamed area",
+   "elev": 724,
+   "slope": 9.5,
+   "rain": 18,
+   "tmax": 45.4
+  },
+  {
+   "kind": "rugged",
+   "lat": 27.85,
+   "lng": 35.65,
+   "score": 100,
+   "label": "unnamed area",
+   "elev": 673,
+   "slope": 7.9,
+   "rain": 18,
+   "tmax": 47.2
+  },
+  {
+   "kind": "rugged",
+   "lat": 27.35,
+   "lng": 36.65,
+   "score": 100,
+   "label": "near Harrat Uwayrid",
+   "elev": 1036,
+   "slope": 6.7,
+   "rain": 18,
+   "tmax": 42.6
+  },
+  {
+   "kind": "rugged",
+   "lat": 26.45,
+   "lng": 37.15,
+   "score": 100,
+   "label": "unnamed area",
+   "elev": 870,
+   "slope": 6.0,
+   "rain": 15,
+   "tmax": 51.1
+  }
+ ],
+ "weights": {
+  "aridity": "1 - rain/120 mm",
+  "vegetation": "MODIS NDVI (greenest of 4 seasons, 2025): bare <= 0.10, vegetated >= 0.25",
+  "volcanic": "0.65 darkness + 0.35 moderate slope",
+  "plains": "very gentle slope x brightness",
+  "rugged": "steep slope x local relief"
+ }
+}

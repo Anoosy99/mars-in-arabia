@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mars in Arabia · Team Dahna</title>
+<meta name="description" content="Places in Saudi Arabia that could prepare the next Moon and Mars missions, found and characterized with open NASA data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400..600&family=Noto+Kufi+Arabic:wght@400..700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="styles.css?v=51">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+
+<header class="topbar" id="topbar">
+  <a class="mark" href="#top">Mars in Arabia<span lang="ar" dir="rtl">المريخ في جزيرة العرب</span></a>
+  <nav class="topnav" aria-label="Sections">
+    <a href="#finder">Finder</a>
+    <a href="#sites">Sites</a>
+    <a href="#moon">Bases</a>
+    <a href="#method">Method</a>
+  </nav>
+</header>
+
+<!-- Opening: Earth turns to Arabia, then becomes Mars -->
+<section class="opening" id="top">
+  <div class="stage">
+    <canvas id="globe" aria-label="3D globe that turns from Earth to Mars"></canvas>
+    <div class="beats">
+      <div class="beat" data-beat="0">
+        <h1>Mars is closer<br>than you think.</h1>
+        <p class="lede">Saudi Arabia holds places that look, and behave, like the Moon and Mars. We found them with open NASA data.</p>
+      </div>
+      <div class="beat" data-beat="1">
+        <h2>Crews train in the Atacama, Death&nbsp;Valley and Iceland.</h2>
+        <p class="lede">Arabia's lava fields, lava tubes and craters have barely been studied as analogs.</p>
+      </div>
+      <div class="beat" data-beat="2">
+        <h2>Mars already has an&nbsp;Arabia.</h2>
+        <p class="lede">Arabia Terra, a cratered Martian highland, carries this peninsula's name. We looked for the reverse.</p>
+      </div>
+    </div>
+    <p class="coord" id="coord" aria-live="polite">EARTH · 23.0°N 45.0°E</p>
+    <p class="credit">NASA GIBS Blue Marble · NASA Mars Trek, Viking MDIM 2.1</p>
+    <div class="cue" aria-hidden="true"><span></span></div>
+  </div>
+</section>
+
+<!-- Finder -->
+<section class="finder" id="finder">
+  <div class="wrap head">
+    <h2>We scanned the whole peninsula.</h2>
+    <p class="lead"><b id="fdCells">36,300</b> cells of about 11 km, each scored against three planetary analog types using open elevation, NASA satellite and NASA climate data.</p>
+  </div>
+  <div class="fd-map wrap-wide">
+    <div id="fmap" role="region" aria-label="Analog likelihood map of the Arabian Peninsula"></div>
+    <div class="seg fd-layers" role="group" aria-label="Analog type">
+      <button data-layer="overall" class="on">All types</button>
+      <button data-layer="volcanic">Volcanic</button>
+      <button data-layer="plains">Smooth plains</button>
+      <button data-layer="rugged">Rugged</button>
+    </div>
+    <div class="fd-legend" aria-hidden="true"><span>Low</span><i></i><span>High</span></div>
+  </div>
+  <div class="wrap fd-cols">
+    <div>
+      <h3>It found the known fields on its own</h3>
+      <p class="fd-def" id="fdDef"></p>
+      <ul class="fd-val" id="fdVal"></ul>
+    </div>
+    <div>
+      <h3>New candidates for a field visit</h3>
+      <ol class="fd-cands" id="fdCands"></ol>
+    </div>
+  </div>
+</section>
+
+<!-- Sites -->
+<section class="explorer" id="sites" aria-label="Field sites">
+  <div class="ex-stage">
+    <canvas id="terrain" aria-label="3D terrain of the selected site from SRTM elevation and Sentinel-2 imagery"></canvas>
+    <p class="loading" id="tLoading">Loading terrain</p>
+
+    <ol class="rail" id="rail" aria-label="Choose a site"></ol>
+
+    <div class="vp-ui">
+      <div class="seg view" role="group" aria-label="Which ground to show">
+        <button data-view="earth" class="on" aria-pressed="true">Saudi site</button><button data-view="twin" aria-pressed="false">Mars twin</button>
+      </div>
+      <div class="seg exag" role="group" aria-label="Vertical scale">
+        <button data-ex="1">True scale</button><button data-ex="2" class="on">2×</button><button data-ex="4">4×</button>
+      </div>
+      <p class="vp-src" id="vpSrc"></p>
+    </div>
+    <p class="vp-hint" aria-hidden="true">Drag to rotate · Ctrl + scroll to zoom</p>
+    <button class="explore-btn" id="exploreBtn" type="button" aria-pressed="false">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12M21 7l-9 5-9-5"/></svg>
+      <span>Explore freely</span>
+    </button>
+
+    <aside class="card" aria-live="polite">
+      <header class="site-head">
+        <p class="site-ar" lang="ar" dir="rtl" id="sAr"></p>
+        <h2 id="sName"></h2>
+        <p class="site-kind" id="sKind"></p>
+      </header>
+      <div class="score">
+        <p class="score-num"><span id="sScore">–</span><small>Analog score / 100</small></p>
+        <dl class="parts" id="sParts"></dl>
+      </div>
+      <div class="seg tabs" role="tablist">
+        <button role="tab" aria-selected="true" data-tab="overview">Overview</button>
+        <button role="tab" aria-selected="false" data-tab="data">Data</button>
+        <button role="tab" aria-selected="false" data-tab="plan">Field plan</button>
+      </div>
+      <div class="tabpane" id="tab-overview">
+        <button class="zoom" id="tZoom" type="button" aria-label="Enlarge the twin image">
+          <img id="tImg" src="assets/sites/khaybar-twin.jpg" alt="Mars twin, orbital mosaic">
+          <span class="zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+        </button>
+        <p class="twin-cap" id="tCap"></p>
+        <div class="bases"><h3>Trains crews for a base at</h3><ul id="sBases"></ul></div>
+        <div class="verdict">
+          <div><h3>Holds</h3><ul id="sHolds"></ul></div>
+          <div><h3>Breaks</h3><ul id="sBreaks"></ul></div>
+        </div>
+        <p class="test"><span>Could test</span><em id="sTest"></em></p>
+      </div>
+      <div class="tabpane" id="tab-data" hidden>
+        <dl class="facts" id="sFacts"></dl>
+        <div class="cmp" id="sCmp"></div>
+      </div>
+      <div class="tabpane" id="tab-plan" hidden>
+        <dl class="plan-grid" id="pGrid"></dl>
+        <div class="months" id="pMonths" aria-label="Months suitable for field work"></div>
+        <h3 class="plan-h">Test campaign</h3>
+        <ol class="plan-list" id="pList"></ol>
+        <p class="plan-note" id="pNote"></p>
+      </div>
+    </aside>
+  </div>
+  <div class="ex-scroll"></div>
+</section>
+
+<!-- Moon base -->
+<section class="moon" id="moon">
+  <div class="wrap head center">
+    <h2>Built for permanent bases.</h2>
+    <p class="lead">NASA's Artemis program is aiming at the lunar south pole. Here is what a base there needs, and where Arabia can and cannot help.</p>
+  </div>
+  <div class="moon-vis">
+    <canvas id="moonGlobe" aria-label="3D Moon turned to the south pole, ring at 84 degrees south"></canvas>
+    <p class="moon-cap">The ring marks 84°S. All nine Artemis III candidate regions lie inside it: Peak near Cabeus B, Haworth, Malapert Massif, Mons Mouton Plateau, Mons Mouton, Nobile Rim 1 and 2, de Gerlache Rim 2, Slater Plain. Imagery: NASA Moon Trek, LRO WAC.</p>
+  </div>
+  <div class="wrap">
+    <table class="matrix">
+      <thead><tr><th>A south-pole base needs</th><th>Arabian analog</th><th>Match</th></tr></thead>
+      <tbody>
+        <tr><td>Operations on steep crater rims</td><td><a href="#sites" data-site="wahbah">Al Wahbah crater walls</a></td><td><span class="m m3">Strong</span></td></tr>
+        <tr><td>Shelter from radiation and temperature swings</td><td><a href="#sites" data-site="jirsan">Umm Jirsan lava tube</a></td><td><span class="m m2">Partial</span></td></tr>
+        <tr><td>Working in long shadows at low sun angles</td><td><a href="#sites" data-site="wahbah">Inside Al Wahbah's 250 m bowl</a></td><td><span class="m m2">Partial</span></td></tr>
+        <tr><td>Handling basaltic soil and abrasive dust</td><td><a href="#sites" data-site="khaybar">Harrat Khaybar</a> and <a href="#sites" data-site="rahat">Rahat</a> soils</td><td><span class="m m2">Partial</span></td></tr>
+        <tr><td>Solar power at scale</td><td>All six sites, 6.2–6.5 kWh/m²/day (NASA POWER)</td><td><span class="m m2">Partial</span></td></tr>
+        <tr><td>Water ice in cold traps near 33–40 K (LRO Diviner)</td><td>None in Arabia; polar analogs such as Antarctica cover this</td><td><span class="m m0">None</span></td></tr>
+      </tbody>
+    </table>
+    <h3 class="matrix-h">And for a base on Mars</h3>
+    <p class="matrix-lead">In 2015, NASA's first workshop on human landing sites heard 47 proposed base zones. Arabia rehearses the ground at four of them.</p>
+    <table class="matrix">
+      <thead><tr><th>Proposed Mars base zone</th><th>Arabian analog</th><th>What crews rehearse</th></tr></thead>
+      <tbody>
+        <tr><td>Jezero Crater, one of the three most-voted zones</td><td><a href="#sites" data-site="khaybar">Harrat Khaybar</a> and <a href="#sites" data-site="rahat">Rahat</a></td><td>Driving and building on volcanic ground</td></tr>
+        <tr><td>Gale Crater, one of the three most-voted zones</td><td><a href="#sites" data-site="wahbah">Al Wahbah crater</a></td><td>Reaching ground down steep crater walls</td></tr>
+        <tr><td>Meridiani Planum</td><td><a href="#sites" data-site="wabar">Wabar craters</a> and the <a href="#sites" data-site="rub">Rub' al Khali</a></td><td>Landing on flat plains and crossing sand ripples</td></tr>
+        <tr><td>Hebrus Valles pits, proposed for shelter and ice</td><td><a href="#sites" data-site="jirsan">Umm Jirsan lava tube</a></td><td>Living and working underground</td></tr>
+      </tbody>
+    </table>
+    <p class="matrix-src">Sources: NASA First Landing Site / Exploration Zone Workshop (2015) and the follow-up vote, where Melas Chasma, Jezero and Gale received the most votes; Hebrus Valles pits per Schulze-Makuch et al. 2016, cited by NASA HiRISE.</p>
+  </div>
+</section>
+
+<!-- Method -->
+<section class="method" id="method">
+  <div class="wrap">
+    <h2>How a site earns its score.</h2>
+    <p class="lead">Every part of the score now comes from open data: elevation, geologic maps, satellites and climate records.</p>
+    <div class="formula" aria-label="Score formula">
+      <div><b>35%</b><span>Geology match</span><i>Rock class from geologic maps (60) + cited landform (40)</i></div>
+      <div><b>25%</b><span>Terrain match</span><i>SRTM vs MOLA / LOLA at the same pixel size</i></div>
+      <div><b>25%</b><span>Aridity</span><i>Measured, NASA POWER rain</i></div>
+      <div><b>15%</b><span>Thermal swing</span><i>Measured, NASA POWER ground temperature</i></div>
+    </div>
+    <div class="two">
+      <div>
+        <h3>The peninsula scan</h3>
+        <p>Each 0.1° cell gets an aridity factor from NASA POWER rainfall, a bare-ground factor from NASA MODIS vegetation index (NDVI, the greenest of four 2025 seasons, decoded to real values), and a land mask. Three archetypes are scored: <b>volcanic</b> (dark basalt surfaces with moderate slope), <b>smooth plains</b> (very gentle, bright, arid ground, like landing sites) and <b>rugged</b> (steep slopes with high local relief). Each archetype is calibrated to its own 99.9th percentile, and the six field sites are used as a check.</p>
+      </div>
+      <div>
+        <h3>Sources</h3>
+        <table class="sources">
+          <tbody>
+            <tr><td>Elevation</td><td>SRTM via AWS Terrain Tiles</td></tr>
+            <tr><td>Earth imagery</td><td>Copernicus Sentinel-2 cloudless (ESA / EOX)</td></tr>
+            <tr><td>Climate</td><td>NASA POWER climatology API</td></tr>
+            <tr><td>Mars imagery</td><td>NASA Mars Trek, Viking MDIM 2.1</td></tr>
+            <tr><td>Moon imagery</td><td>NASA Moon Trek, LRO WAC</td></tr>
+            <tr><td>Earth globe</td><td>NASA GIBS Blue Marble</td></tr>
+            <tr><td>Vegetation</td><td>NASA MODIS Terra NDVI, via GIBS</td></tr>
+            <tr><td>Mars elevation</td><td>MGS MOLA MEGDR, 128 px/deg (PDS)</td></tr>
+            <tr><td>Moon elevation</td><td>LRO LOLA LDEM, 128 px/deg (PDS)</td></tr>
+            <tr><td>Mars geology</td><td>USGS SIM 3292 global geologic map</td></tr>
+            <tr><td>Earth geology</td><td>GSC world geology via Macrostrat</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="note" id="genNote"></p>
+  </div>
+</section>
+
+<!-- Limits -->
+<section class="limits" id="limits">
+  <div class="wrap">
+    <h2>What no place on Earth can fake.</h2>
+    <div class="lims">
+      <div><p class="lim-n">0.38 g</p><p>Gravity on Mars. The Moon is 0.17 g. Every site here pulls 2.6 to 6 times harder.</p></div>
+      <div><p class="lim-n">0.6%</p><p>Mars surface pressure compared with Earth. The Moon has none at all.</p></div>
+      <div><p class="lim-n">No shield</p><p>Neither world has Earth's magnetic field or thick air, so surface radiation is far higher.</p></div>
+    </div>
+    <p class="closing">An analog does not have to match everything. It has to be honest about what it matches.</p>
+  </div>
+</section>
+
+<dialog class="lightbox" id="lightbox" aria-label="Twin image">
+  <form method="dialog"><button class="lb-close" aria-label="Close">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></form>
+  <img id="lbImg" alt="">
+  <p id="lbCap"></p>
+</dialog>
+
+<footer class="foot">
+  <div class="wrap">
+    <p><b>Team Dahna</b> · NASA Space Apps Challenge 2026 · Kuala Lumpur</p>
+    <p>Challenge: Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars. Built with open data from NASA, ESA and the SRTM mission. AI tools assisted with code; site selection and assessment by the team.</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="module" src="app.js?v=52"></script>
+</body>
+</html>

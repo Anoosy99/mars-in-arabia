@@ -1,0 +1,278 @@
+[
+ {
+  "id": "khaybar",
+  "name": "Harrat Khaybar",
+  "ar": "حرّة خيبر",
+  "lat": 25.72,
+  "lng": 39.95,
+  "half": 0.22,
+  "kind": "Basaltic volcanic field",
+  "body": "Mars",
+  "twin": "Tharsis lava plains, near Arsia Mons",
+  "tlat": -9.0,
+  "tlng": -121.0,
+  "thalf": 2.5,
+  "tz": 7,
+  "assess": {
+   "geology": 90,
+   "terrain": 85
+  },
+  "holds": [
+   "Basalt lava flows, cinder cones and tuff rings, the same rock family that paves Tharsis",
+   "A field large enough for long rover traverses and navigation tests",
+   "Hyper-arid surface with almost no vegetation cover"
+  ],
+  "breaks": [
+   "The flows are thousands of years old; Tharsis lavas are hundreds of millions",
+   "Earth weathering has rounded edges and filled hollows with sand"
+  ],
+  "test": "Long-range rover driving and autonomous navigation across fresh basalt",
+  "plan": [
+   "Long-range rover traverse with autonomous hazard avoidance across blocky basalt",
+   "Navigation without GPS using terrain-relative positioning",
+   "Suit and EVA walking trials on loose scoria"
+  ],
+  "bases": [
+   {
+    "world": "Moon",
+    "site": "Malapert Massif",
+    "task": "Rover and walking traverses over boulder fields and steep slopes"
+   },
+   {
+    "world": "Mars",
+    "site": "Jezero Crater",
+    "task": "Long drives across a volcanic crater floor; one of the three most-voted base zones"
+   }
+  ]
+ },
+ {
+  "id": "jirsan",
+  "name": "Umm Jirsan lava tube",
+  "ar": "كهف أم جرسان",
+  "lat": 25.585,
+  "lng": 39.82,
+  "half": 0.04,
+  "kind": "Basalt lava tube (cave)",
+  "body": "Moon",
+  "twin": "Marius Hills skylight region",
+  "tlat": 14.1,
+  "tlng": -56.8,
+  "thalf": 1.5,
+  "tz": 8,
+  "assess": {
+   "geology": 88,
+   "terrain": 80
+  },
+  "holds": [
+   "Roughly 1.5 km of passages, the longest lava tube reported in Arabia",
+   "Lunar lava tubes are leading candidates for radiation-shielded base sites",
+   "Inside, the temperature swing is far smaller than at the surface"
+  ],
+  "breaks": [
+   "Lunar tubes are thought to be many times wider",
+   "The cave holds air, dust and life; a lunar tube is vacuum"
+  ],
+  "test": "Mapping, lighting and communications inside a tube before a lunar base uses one",
+  "plan": [
+   "3D lidar mapping of a lava tube interior by a small rover or drone",
+   "Radio links from inside the tube to a surface relay",
+   "Lighting and wayfinding procedures for crews underground"
+  ],
+  "bases": [
+   {
+    "world": "Moon",
+    "site": "Shelter for any base",
+    "task": "None of the nine Artemis regions has a mapped cave, so this rehearses living in a lava tube for later bases"
+   },
+   {
+    "world": "Mars",
+    "site": "Hebrus Valles pits",
+    "task": "Pits proposed as human landing candidates for shelter and buried ice"
+   }
+  ]
+ },
+ {
+  "id": "rahat",
+  "name": "Harrat Rahat, 1256 CE flow",
+  "ar": "حرّة رهط",
+  "lat": 24.25,
+  "lng": 39.88,
+  "half": 0.14,
+  "kind": "Young basaltic lava flow and cones",
+  "body": "Mars",
+  "twin": "Elysium Mons volcanic province",
+  "tlat": 25.0,
+  "tlng": 147.2,
+  "thalf": 2.5,
+  "tz": 7,
+  "assess": {
+   "geology": 86,
+   "terrain": 82
+  },
+  "holds": [
+   "A lava flow from a historic eruption in 1256 CE, fresh and barely weathered",
+   "Chains of scoria cones along fissures, as on Elysium",
+   "Close to Madinah, so field teams can reach it in an hour"
+  ],
+  "breaks": [
+   "Near a city, so not an isolation analog",
+   "Seasonal plants grow between flows after rain"
+  ],
+  "test": "Volcanic sampling procedures and astronaut geology training",
+  "plan": [
+   "Astronaut geology training on a dated (1256 CE) lava flow",
+   "Sample collection and documentation procedures",
+   "Day-trip field logistics from a nearby city base"
+  ],
+  "bases": [
+   {
+    "world": "Moon",
+    "site": "Mons Mouton Plateau",
+    "task": "Build landing pads and roads on flat ground before crews arrive"
+   },
+   {
+    "world": "Mars",
+    "site": "Jezero Crater",
+    "task": "Make bricks and pads from basalt, the same rock family as Jezero's crater floor"
+   }
+  ]
+ },
+ {
+  "id": "rub",
+  "name": "Rub' al Khali dune sea",
+  "ar": "الربع الخالي",
+  "lat": 20.5,
+  "lng": 52.0,
+  "half": 0.12,
+  "kind": "Wind-built dunes (aeolian)",
+  "body": "Mars",
+  "twin": "Nili Patera dune field",
+  "tlat": 8.8,
+  "tlng": 67.3,
+  "thalf": 2.5,
+  "tz": 7,
+  "assess": {
+   "geology": 60,
+   "terrain": 88
+  },
+  "holds": [
+   "The largest continuous sand sea on Earth",
+   "Wind shapes the same dune families that cover parts of Mars",
+   "Loose sand and dust storms to test rover wheels and filters"
+  ],
+  "breaks": [
+   "Light quartz sand; Martian dunes are dark basaltic sand",
+   "Dunes here move far faster in thick Earth air"
+  ],
+  "test": "Rover mobility in loose sand and dust-storm hardening",
+  "plan": [
+   "Wheel and track mobility tests in loose sand",
+   "Dust filtration and seal testing during sandstorms",
+   "Power system tests under high dust loading"
+  ],
+  "bases": [
+   {
+    "world": "Moon",
+    "site": "All nine regions",
+    "task": "Keep rovers moving through loose, fine soil"
+   },
+   {
+    "world": "Mars",
+    "site": "Meridiani Planum",
+    "task": "Proposed base zone; Opportunity was stuck in a sand ripple here for five weeks in 2005"
+   }
+  ]
+ },
+ {
+  "id": "wahbah",
+  "name": "Al Wahbah crater",
+  "ar": "فوهة الوعبة",
+  "lat": 22.902,
+  "lng": 41.139,
+  "half": 0.03,
+  "kind": "Volcanic explosion crater (maar)",
+  "body": "Moon",
+  "twin": "Linné crater",
+  "tlat": 27.74,
+  "tlng": 11.8,
+  "thalf": 1.0,
+  "tz": 8,
+  "assess": {
+   "geology": 55,
+   "terrain": 84
+  },
+  "holds": [
+   "A bowl about 2 km wide and 250 m deep with steep walls",
+   "A bright salt-crusted floor, high contrast like fresh lunar craters",
+   "Steep, loose slopes to test climbing and descent"
+  ],
+  "breaks": [
+   "Made by a volcanic explosion, not an impact",
+   "Salt and water history that the Moon does not have"
+  ],
+  "test": "Crater-wall descent and robotic climbing",
+  "plan": [
+   "Robotic descent and ascent on steep crater walls",
+   "Tethered rover operations on 30°+ slopes",
+   "Shadow and low-sun-angle camera tests inside a deep bowl"
+  ],
+  "bases": [
+   {
+    "world": "Moon",
+    "site": "de Gerlache Rim 2",
+    "task": "Climb down and work on a crater rim in long shadows"
+   },
+   {
+    "world": "Mars",
+    "site": "Gale Crater",
+    "task": "One of the three most-voted base zones; crews reaching ground down crater walls"
+   }
+  ]
+ },
+ {
+  "id": "wabar",
+  "name": "Wabar impact craters",
+  "ar": "فوهات وبار",
+  "lat": 21.503,
+  "lng": 50.474,
+  "half": 0.012,
+  "kind": "Meteorite impact craters in sand",
+  "body": "Mars",
+  "twin": "Meridiani Planum, Opportunity's plains",
+  "tlat": -2.0,
+  "tlng": -5.5,
+  "thalf": 2.5,
+  "tz": 7,
+  "assess": {
+   "geology": 80,
+   "terrain": 72
+  },
+  "holds": [
+   "Real meteorite impact craters inside a dune sea",
+   "Impact glass and iron fragments, like ejecta at Martian craters",
+   "Craters among wind ripples, like the plains Opportunity crossed"
+  ],
+  "breaks": [
+   "Small craters, partly buried by moving sand",
+   "Very young impacts on a very young surface"
+  ],
+  "test": "Finding and sampling impact ejecta in a sand-covered plain",
+  "plan": [
+   "Searching for and sampling impact ejecta and glass",
+   "Ground-penetrating radar over sand-buried craters",
+   "Landing-site hazard mapping on a sandy plain"
+  ],
+  "bases": [
+   {
+    "world": "Moon",
+    "site": "Slater Plain",
+    "task": "Choose and certify a flat, boulder-free landing zone"
+   },
+   {
+    "world": "Mars",
+    "site": "Meridiani Planum",
+    "task": "Flat plains where Opportunity found an iron meteorite, like Wabar's"
+   }
+  ]
+ }
+]
