@@ -191,7 +191,7 @@ function strataTexture() {
 }
 
 async function initExplorer() {
-  const res = await fetch('assets/data.json?v=51');
+  const res = await fetch('assets/data.json?v=53');
   const data = await res.json();
   const sites = data.sites;
   document.getElementById('genNote').textContent =
@@ -523,7 +523,7 @@ async function initExplorer() {
 async function initFinder() {
   const L = window.L;
   const f = await (await fetch('assets/finder/finder.json?v=50')).json();
-  const sites = (await (await fetch('assets/data.json?v=51')).json()).sites;
+  const sites = (await (await fetch('assets/data.json?v=53')).json()).sites;
   document.getElementById('fdCells').textContent = f.cells.toLocaleString('en-US');
   const [la0, lo0, la1, lo1] = f.bbox;
   const map = L.map('fmap', { zoomControl: false, scrollWheelZoom: false, attributionControl: true, minZoom: 4, maxZoom: 11 })

@@ -105,7 +105,7 @@ MOON = {  # published setting of the two Moon twins (both sit on mare basalt pla
 }
 FEATURE = {  # landform match, each with its source
     "khaybar": (1.0, "Lava flows and cinder cones on both (Tharsis volcanic field)"),
-    "jirsan": (1.0, "Lava tube on Earth; the Marius Hills skylight opens into a lava tube (Haruyama et al. 2009)"),
+    "jirsan": (1.0, "Lava tube on Earth; the Marius Hills skylight is thought to open into one (Haruyama et al. 2009)"),
     "rahat": (1.0, "Lava flows and cones on both (Elysium volcanic edifice)"),
     "rub": (1.0, "Dune field on both (Nili Patera dunes, HiRISE)"),
     "wahbah": (0.5, "Both are bowl craters, but Al Wahbah is volcanic and Linné is an impact crater"),

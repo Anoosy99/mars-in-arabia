@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400..600&family=Noto+Kufi+Arabic:wght@400..700&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-<link rel="stylesheet" href="styles.css?v=51">
+<link rel="stylesheet" href="styles.css?v=53">
 <script type="importmap">
 { "imports": {
   "three": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.module.js",
@@ -40,7 +40,7 @@
       </div>
       <div class="beat" data-beat="1">
         <h2>Crews train in the Atacama, Death&nbsp;Valley and Iceland.</h2>
-        <p class="lede">Arabia's lava fields, lava tubes and craters have barely been studied as analogs.</p>
+        <p class="lede">Arabia's lava fields, lava tubes and craters have rarely been studied as analogs.</p>
       </div>
       <div class="beat" data-beat="2">
         <h2>Mars already has an&nbsp;Arabia.</h2>
@@ -168,7 +168,7 @@
         <tr><td>Working in long shadows at low sun angles</td><td><a href="#sites" data-site="wahbah">Inside Al Wahbah's 250 m bowl</a></td><td><span class="m m2">Partial</span></td></tr>
         <tr><td>Handling basaltic soil and abrasive dust</td><td><a href="#sites" data-site="khaybar">Harrat Khaybar</a> and <a href="#sites" data-site="rahat">Rahat</a> soils</td><td><span class="m m2">Partial</span></td></tr>
         <tr><td>Solar power at scale</td><td>All six sites, 6.2–6.5 kWh/m²/day (NASA POWER)</td><td><span class="m m2">Partial</span></td></tr>
-        <tr><td>Water ice in cold traps near 33–40 K (LRO Diviner)</td><td>None in Arabia; polar analogs such as Antarctica cover this</td><td><span class="m m0">None</span></td></tr>
+        <tr><td>Water ice in permanently shadowed cold traps (LRO Diviner, LCROSS)</td><td>None in Arabia; polar analogs such as Antarctica cover this</td><td><span class="m m0">None</span></td></tr>
       </tbody>
     </table>
     <h3 class="matrix-h">And for a base on Mars</h3>
@@ -234,6 +234,16 @@
       <div><p class="lim-n">0.6%</p><p>Mars surface pressure compared with Earth. The Moon has none at all.</p></div>
       <div><p class="lim-n">No shield</p><p>Neither world has Earth's magnetic field or thick air, so surface radiation is far higher.</p></div>
     </div>
+    <div class="caveats">
+      <h3>How sure we are</h3>
+      <ul>
+        <li><b>Facts are sourced.</b> Site facts, NASA base regions, map units and climate values come from the sources listed under the method.</li>
+        <li><b>Pairings are our proposal.</b> Which Saudi site trains crews for which Moon or Mars base site is the team's recommendation, built on those facts. NASA has not endorsed it.</li>
+        <li><b>Terrain is compared at 460–570 m pixels on Mars</b> (MOLA's limit). Small features, such as the Wabar craters or the inside of a lava tube, are below that size and are not in the terrain score.</li>
+        <li><b>The finder check is partly circular.</b> The volcanic archetype looks for dark basalt, so known lava fields score high by design. The check shows it works; it does not prove it is unbiased.</li>
+        <li><b>Umm Jirsan's position is approximate,</b> and NASA POWER climate is coarse, about 50 km per cell.</li>
+      </ul>
+    </div>
     <p class="closing">An analog does not have to match everything. It has to be honest about what it matches.</p>
   </div>
 </section>
@@ -256,6 +266,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-<script type="module" src="app.js?v=52"></script>
+<script type="module" src="app.js?v=53"></script>
 </body>
 </html>
