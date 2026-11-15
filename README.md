@@ -53,5 +53,5 @@ three.js, GSAP + ScrollTrigger, Lenis, Leaflet; Esri World Imagery basemap (find
 
 ## AI disclosure
 - **Code and data scripts:** written with AI assistance (Claude). This is marked in the `ai-disclosure` meta tag of `index.html`.
-- **Demo video voice-over:** generated with AI (ElevenLabs). The video carries a visible label and file metadata saying so.
+- **Demo video voice-over:** generated with AI. The video carries a visible label and file metadata saying so.
 - **No AI-generated images.** All imagery and elevation are real data from the sources above.
